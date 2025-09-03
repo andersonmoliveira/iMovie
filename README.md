@@ -111,6 +111,7 @@ O iMovie utiliza um arquivo de configuração `Keys.xcconfig` para armazenar a A
 
 ```text
 API_KEY = <SUA_API_KEY>
+```
 
 ---
 
