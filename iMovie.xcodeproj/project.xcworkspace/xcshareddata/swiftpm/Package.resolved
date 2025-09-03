@@ -1,0 +1,24 @@
+{
+  "originHash" : "135d5f5535b7252244f65a400686892320346aece72b5084420219a9abeb20b8",
+  "pins" : [
+    {
+      "identity" : "corenetwork",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/andersonmoliveira/CoreNetwork",
+      "state" : {
+        "revision" : "cf6ab24e77c7a44dbc091efaaf43acfdb926f4a5",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "coreuikit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/andersonmoliveira/CoreUIKit",
+      "state" : {
+        "revision" : "585cbed0a9a6ddd9eaf3e39d4bd70b66dfac0a3a",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}

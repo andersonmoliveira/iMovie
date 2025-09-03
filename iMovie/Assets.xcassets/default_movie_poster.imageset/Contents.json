@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "default_movie_poster.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
