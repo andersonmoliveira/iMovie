@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/andersonmoliveira/CoreNetwork",
       "state" : {
-        "revision" : "cf6ab24e77c7a44dbc091efaaf43acfdb926f4a5",
-        "version" : "1.0.0"
+        "revision" : "9961b464c4583aeec53d7598f4f45a57930f78dd",
+        "version" : "1.0.1"
       }
     },
     {

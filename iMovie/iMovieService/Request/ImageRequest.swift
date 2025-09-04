@@ -24,7 +24,7 @@ enum ImageRequest: Request {
     var path: String {
         switch self {
         case .download(let name):
-            return "/t/p/w200\(name)"
+            return "/t/p/w500\(name)"
         }
     }
     
