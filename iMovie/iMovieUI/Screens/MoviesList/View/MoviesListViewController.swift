@@ -77,11 +77,18 @@ final class MoviesListViewController: UIViewController, MoviesListViewController
     private func updateView(with newMovies: [Movie]) {
         if currentPage == 1 {
             movies = newMovies
+            collectionView.reloadData()
             refreshControl.endRefreshing()
         } else {
+            let startIndex = movies.count
             movies.append(contentsOf: newMovies)
+
+            let indexPaths = newMovies.indices.map { IndexPath(item: startIndex + $0, section: 0) }
+
+            collectionView.performBatchUpdates {
+                collectionView.insertItems(at: indexPaths)
+            }
         }
-        collectionView.reloadData()
     }
 
     @MainActor
