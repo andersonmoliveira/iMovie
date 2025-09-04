@@ -142,7 +142,7 @@ extension MoviesListViewController: UICollectionViewDataSource, UICollectionView
         let columns: CGFloat = 2
         let width = availableWidth / columns
 
-        return CGSize(width: width, height: 285)
+        return CGSize(width: width, height: 320)
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

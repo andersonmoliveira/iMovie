@@ -11,7 +11,7 @@ import CoreUIKit
 final class MovieCell: UICollectionViewCell, MovieCellProtocol {
 
     var viewModel: MovieImageViewModelProtocol?
-    var currentPath: String = ""
+    private var currentPath: String = ""
 
     private lazy var cardView: CardViewProtocol = {
         let cardView = CardView()
@@ -23,14 +23,7 @@ final class MovieCell: UICollectionViewCell, MovieCellProtocol {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.addSubview(cardView.asView())
-
-        NSLayoutConstraint.activate([
-            cardView.asView().topAnchor.constraint(equalTo: contentView.topAnchor),
-            cardView.asView().leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            cardView.asView().trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            cardView.asView().bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        ])
+        setupConstraints()
     }
 
     required init?(coder: NSCoder) {
@@ -40,15 +33,31 @@ final class MovieCell: UICollectionViewCell, MovieCellProtocol {
     override func prepareForReuse() {
         super.prepareForReuse()
         currentPath = ""
+        cardView.setupView(
+            poster: nil,
+            title: "",
+            releaseDate: ""
+        )
     }
 
     func setupView(movie: Movie) {
         cardView.setupView(
             poster: nil,
             title: movie.title ?? "",
-            releaseDate: ""
+            releaseDate: movie.releaseDate ?? ""
         )
         loadImage(movie: movie)
+    }
+    
+    private func setupConstraints() {
+        contentView.addSubview(cardView.asView())
+
+        NSLayoutConstraint.activate([
+            cardView.asView().topAnchor.constraint(equalTo: contentView.topAnchor),
+            cardView.asView().leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            cardView.asView().trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            cardView.asView().bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
     }
 
     private func loadImage(movie: Movie) {
@@ -60,11 +69,7 @@ final class MovieCell: UICollectionViewCell, MovieCellProtocol {
                 let imageData = try await viewModel?.loadImage(name: posterPath)
                 updateView(data: imageData, posterPath: posterPath)
             } catch {
-                cardView.setupView(
-                    poster: nil,
-                    title: movie.title ?? "",
-                    releaseDate: ""
-                )
+                cardView.update(image: nil)
             }
         }
     }

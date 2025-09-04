@@ -52,9 +52,3 @@ enum MovieRequest: Request {
         }
     }
 }
-
-public extension HTTPMethod {
-    func rawValue() -> String {
-        return "GET"
-    }
-}

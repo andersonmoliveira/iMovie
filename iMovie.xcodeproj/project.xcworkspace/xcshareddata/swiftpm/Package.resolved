@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/andersonmoliveira/CoreUIKit",
       "state" : {
-        "revision" : "585cbed0a9a6ddd9eaf3e39d4bd70b66dfac0a3a",
-        "version" : "1.0.0"
+        "revision" : "43dfbc083cc6c863868b7d536926138ac606d3d6",
+        "version" : "1.0.2"
       }
     }
   ],
